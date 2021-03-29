@@ -5,22 +5,6 @@ import java.io.OutputStreamWriter
 
 fun main(args: Array<String>) = with(BufferedReader(InputStreamReader(System.`in`))) {
     BufferedWriter(OutputStreamWriter(System.out)).use { writer ->
-        val expression = { params : String ->
-            if(params.split("+").size > 1)
-                params.split("+").map { it.toInt() }.sum()
-            else
-                params.toInt()
-        }
-
-        val list = readLine().split("-")
-        var answer = expression(list[0])
-
-        for (i in 1 until list.size) {
-            answer -= expression(list[i])
-        }
-
-        writer.write("$answer")
-        writer.flush()
 
     }
 }
